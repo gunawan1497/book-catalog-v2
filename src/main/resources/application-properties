@@ -1,0 +1,7 @@
+server.port=8081
+
+app.welcome-text=Hello World from Gun, Are you ready to learn Spring Boot?
+app.timezone=Asia/Jakarta
+app.currency=IDR
+
+cloud.api-key=${CLOUD_KEY2}

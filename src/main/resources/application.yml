@@ -1,0 +1,44 @@
+# untuk memunculkan 2 log
+logging:
+  level:
+    '[com.subrutin.catalog]': TRACE # untuk memunculkan log dari package com.subrutin.catalog
+#    '[com.subrutin.catalog.service]': TRACE
+app:
+    currency: IDR
+    timezone: Asia/Jakarta
+    welcome-text: Hello World from Gun, Are you ready to learn Spring Boot?
+cloud:
+    api-key: ${CLOUD_KEY2}
+server:
+    port: 8081
+
+---
+spring:
+  profiles:
+    active: development
+
+server:
+  port: 8080
+
+app:
+    welcome-text: Hello World from Gun, This is development server
+
+---
+spring:
+  profiles:
+    active: test
+
+server:
+    port: 8081
+
+---
+spring:
+  profiles:
+    active: production
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+
+server:
+    port: 8082
+
